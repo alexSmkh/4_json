@@ -10,10 +10,10 @@ def load_data(file_name):
                 return json.load(file_handler)
         else:
             print('File not found')
-            exit()
+            return None
     else:
         print('Incorrect data format')
-        exit()
+        return None
 
 
 def get_arguments_from_console():
@@ -30,4 +30,5 @@ def pretty_print_json(json_file):
 if __name__ == '__main__':
     args = get_arguments_from_console()
     json_file = load_data(args.file_name)
-    print(pretty_print_json(json_file))
+    if json_file:
+        print(pretty_print_json(json_file))
