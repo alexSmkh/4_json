@@ -4,7 +4,7 @@ from json.decoder import JSONDecodeError
 
 
 def load_data(file_name):
-    with open(file_name, 'r', encoding='utf8') as file_handler:
+    with open(file_name, 'r', encoding='utf-8-sig') as file_handler:
         return json.load(file_handler)
 
 
@@ -21,6 +21,6 @@ if __name__ == '__main__':
     except IndexError:
         print('You forgot to enter the file name.')
     except IOError:
-        print('File not found')
+        print('File not found.')
     except JSONDecodeError:
-        print('The file must be a json format')
+        print('The file must be a json format.')
